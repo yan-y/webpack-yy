@@ -16,9 +16,15 @@ module.exports = {
             }
         },{
             test: /\.scss$/,
-            use: [
+            use: [ // loader的执行顺序永远是从下到上，从右到左
                 'style-loader',
-                'css-loader',
+                {
+                    loader: 'css-loader',
+                    options: {
+                        importLoaders: 2, // 此属性代表如果页面含有import引入的css文件，也会先执行postcss-loader、sass-loader
+                        modules: true // 开启css module(css模块化打包)
+                    }
+                },
                 'sass-loader',
                 'postcss-loader'
             ]
