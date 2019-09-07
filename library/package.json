@@ -1,0 +1,17 @@
+{
+	"name": "library-yan-y-2019",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./dist/library.js",
+	"scripts": {
+		"build": "webpack"
+	},
+	"keywords": [],
+	"author": "yan-y",
+	"license": "MIT",
+	"dependencies": {
+		"lodash": "^4.17.15",
+		"webpack": "^4.39.3",
+		"webpack-cli": "^3.3.8"
+	}
+}
