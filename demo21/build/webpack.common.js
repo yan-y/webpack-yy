@@ -7,9 +7,17 @@ module.exports = {
 	entry: {
 		main: './src/index.js',
 	},
+	resolve: {
+		/**
+		 * extensions
+		 * 当引入其它目录模块时, 会优先查找以 js, jsx 结尾的文件
+		 * 切勿过于依赖此配置, 如配置过多参数, 反而会影响 webpack 打包配置
+		 */
+		extensions: ['.js', '.jsx']
+	},
 	module: {
 		rules: [{
-			test: /\.js$/,
+			test: /\.jsx?$/,
 			exclude: /node_modules/,
 			use: [{
 				loader: 'babel-loader'
